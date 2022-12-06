@@ -3,6 +3,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="selectedCountry"
+            type="com.selincengiz.kotlincountries.model.Model" />
+    </data>
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -16,7 +21,7 @@ xmlns:tools="http://schemas.android.com/tools">
         android:layout_alignParentTop="true"
         android:scaleType="fitCenter"
         android:minHeight="200dp"
-        android:src="@mipmap/ic_launcher_round"
+        android:downloadUrl="@{selectedCountry.flag}"
         android:layout_marginTop="5dp">
 
     </ImageView>
@@ -25,7 +30,7 @@ xmlns:tools="http://schemas.android.com/tools">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/flag"
-        android:text="Country Name"
+        android:text="@{selectedCountry.name}"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
@@ -38,7 +43,7 @@ xmlns:tools="http://schemas.android.com/tools">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/countryName"
-        android:text="Capital"
+        android:text="@{selectedCountry.capital}"
         android:textSize="18sp"
         android:layout_centerHorizontal="true"
         android:padding="5dp">
@@ -50,7 +55,7 @@ xmlns:tools="http://schemas.android.com/tools">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/countryCapital"
-        android:text="Region"
+        android:text="@{selectedCountry.region}"
         android:textSize="18sp"
         android:layout_centerHorizontal="true"
         android:padding="5dp">
@@ -62,7 +67,7 @@ xmlns:tools="http://schemas.android.com/tools">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/countryRegion"
-        android:text="Currency"
+        android:text="@{selectedCountry.currency}"
         android:textSize="18sp"
         android:layout_centerHorizontal="true"
         android:padding="5dp">
@@ -74,7 +79,7 @@ xmlns:tools="http://schemas.android.com/tools">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/countryCurrency"
-        android:text="Language"
+        android:text="@{selectedCountry.language}"
         android:textSize="18sp"
         android:layout_centerHorizontal="true"
         android:padding="5dp">
